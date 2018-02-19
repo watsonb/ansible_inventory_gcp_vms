@@ -29,7 +29,7 @@ gcp_net_fw_rules:
     source_ranges: ['10.240.0.0/24','10.200.0.0/16']
     state: present
   - name: external-ssh-icmp-https
-    allow: 'tcp:22;tcp:6443;icmp'
+    allow: 'tcp:22;tcp:6443;icmp;tcp:8080'
     network: "{{ gcp_net_name }}"
     source_ranges: ['0.0.0.0/0']
     state: present
