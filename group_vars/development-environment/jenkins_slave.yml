@@ -1,0 +1,19 @@
+---
+#----------
+# inventories/group_vars/nifs-asp/jenkins_slave.yml
+#
+# This file is intended to capture environment-specific values to configure the
+# application of the jenkins_slave role to the ansible-controllers group as part
+# of the cosmicSeed playbook.
+#
+# Please refer to the jenkins_slave role for a description of these variables
+# and to understand what other variables may be re-defined here.
+#
+# Because of this file's location (group_vars) and the inventories that
+# cosmicSeed typically targets (*-asp), this particular file is tailored for the
+# nifs-asp environment
+#----------
+
+jenkins_slave_jenkins_master: http://jenkins01.grdn.pocnet.mil:8080
+jenkins_slave_jenkins_username: admin
+jenkins_slave_jenkins_password: "{{ vault_jenkins_slave_jenkins_password }}"

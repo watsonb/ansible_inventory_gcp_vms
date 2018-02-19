@@ -1,0 +1,57 @@
+---
+#----------
+# inventories/group_vars/nifs-asp/jenkins_server.yml
+#
+# This file is intended to capture environment-specific values to configure the
+# application of the jenkins_server role to the jenkins-servers group as part
+# of the cosmicSeed playbook.
+#
+# Please refer to the jenkins_server role for a description of these variables
+# and to understand what other variables may be re-defined here.
+#
+# Because of this file's location (group_vars) and the inventories that
+# cosmicSeed typically targets (*-asp), this particular file is tailored for the
+# nifs-asp environment
+#----------
+jenkins_server_use_custom_repo: true
+jenkins_server_custom_repo_baseurl: "http://pkg.jenkins.io/redhat"
+jenkins_server_custom_repo_enabled: 1 #set to 0 to disable
+jenkins_server_custom_repo_gpgcheck: 0 #set to 1 to enable key checking
+jenkins_server_custom_repo_gpgkey: "http://pkg.jenkins.io/redhat/key"
+
+jenkins_server_plugin_url: "https://updates.jenkins.io/"
+jenkins_server_admin_username: admin
+jenkins_server_admin_pw: "{{ vault_jenkins_server_admin_pw }}"
+jenkins_server_port: 8080
+jenkins_server_slave_port: 38352
+jenkins_server_plugins:
+  - ace-editor
+  - active-directory
+  - ansible
+  - ansicolor
+  - ant
+  - blueocean
+  - cobertura
+  - cucumber
+  - cucumber-reports
+  - cucumber-slack-notifier
+  - cucumber-testresult-plugin
+  - cucumber-trends-report
+  - discard-old-build
+  - docker-commons
+  - docker-workflow
+  - email-ext
+  - git
+  - github
+  - git-server
+  - gradle
+  - handlebars
+  - saferestart
+  - slack
+  - subversion
+  - swarm
+  - violations
+  - vsphere-cloud
+  - windows-slaves
+  - ws-cleanup
+  - xunit
